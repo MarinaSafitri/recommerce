@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Recommerce - Recommendation Engine for your E-commerce</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/media-queries.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+		
+		<!-- Top menu -->
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="" href="index.html" style="color: black">Recommerce</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="top-navbar-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="scroll-link" href="#features">Available Platform API</a></li>
+						<li><a class="scroll-link" href="#how-it-works">How it works</a></li>
+						<!--<li><a class="scroll-link" href="#testimonials">Testimonials</a></li>-->
+						<li><a class="scroll-link" href="#faq">FAQ</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+				
+        <!-- Top content -->
+        <div class="top-content">
+        	<div class="container">
+        	
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2 text">
+						<h1 class="wow fadeInLeftBig">Recommerce</h1>
+						<div class="description wow fadeInLeftBig">
+							<p style="color: black">
+								Recommendation Engine for your E-commerce<br>
+								Give you best recommendasion pattern based on user based collaborative filtering that enabled you to boost  customer service in your e-commerce platform. 
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-6 col-sm-offset-3 r-form-1-box wow fadeInUp">
+						<div class="r-form-1-top">
+							<div class="r-form-1-top-left">
+								<h3>Sign up now / <a href="http://localhost:3000/login" style="color: #fff"><b>Login</b></a></h3>
+								<p>Fill in the form below to get recommerce access:</p>
+							</div>
+							<div class="r-form-1-top-right">
+								<i class="fa fa-pencil"></i>
+							</div>
+						</div>
+						<div class="r-form-1-bottom">
+							<form name="randform" role="form" action="/user/add" method="post">
+								<div class="form-group">
+									<label class="sr-only" for="r-form-1-first-name">url shop</label>
+									<input type="text" name="urlshop" placeholder="url shop" class="r-form-1-first-name form-control" id="urlshop">
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="r-form-1-last-name">Email</label>
+									<input type="text" name="email" placeholder="Email" class="r-form-1-last-name form-control" id="username">
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="r-form-1-last-name">Password</label>
+									<input type="password" name="password" placeholder="password" class="r-form-1-email form-control" id="password">
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="r-form-1-about-yourself">Customer Key</label>
+									<textarea name="ck" placeholder="Input  customer key from your app API." 
+												class="r-form-1-about-yourself form-control" id="ck"></textarea>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="r-form-1-about-yourself">Customer Secret</label>
+									<textarea name="cs" placeholder="Input  customer secret from your app API." 
+												class="r-form-1-about-yourself form-control" id="cs"></textarea>
+								</div>
+								<div class="form-group">
+
+
+								<button type="button" class="btn" onClick="randomString();" >Generate Token!</button>
+									<label class="sr-only" for="r-form-1-about-yourself">My Token</label>
+									<input name="randomfield" placeholder=" " 
+												class="r-form-1-about-yourself form-control" id="randomfield"></input>
+
+												<script language="javascript" type="text/javascript">
+										function randomString() {
+											var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+											var string_length = 16;
+											var randomstring = '';
+											for (var i=0; i<string_length; i++) {
+												var rnum = Math.floor(Math.random() * chars.length);
+												randomstring += chars.substring(rnum,rnum+1);
+											}
+											document.randform.randomfield.value = randomstring;
+										}
+										</script>
+								</div>
+
+								<button type="submit" class="btn">Sign me up!</button><br><br>
+								
+
+							</form>
+						</div>
+					</div>
+				</div>
+                
+            </div>
+        </div>
+
+        <!-- Features 
+        <div class="features-container section-container">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 features section-description wow fadeIn">
+	                    <h2>Why You Should Join?</h2>
+	                    <div class="divider-1 wow fadeInUp">. . . . . . . . . .</div>
+	                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
+	                    	Ut wisi enim ad minim veniam, quis nostrud tempor incididunt ut labore et.</p>
+	                </div>
+	            </div>
+	            <div class="row">
+                	<div class="col-sm-4 features-box wow fadeInUp">
+	                	<div class="features-box-icon"><i class="fa fa-thumbs-up"></i></div>
+	                    <h3>Easy To Use</h3>
+	                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                    </div>
+                    <div class="col-sm-4 features-box wow fadeInDown">
+	                	<div class="features-box-icon"><i class="fa fa-cog"></i></div>
+	                    <h3>Responsive Design</h3>
+	                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                    </div>
+                    <div class="col-sm-4 features-box wow fadeInUp">
+	                	<div class="features-box-icon"><i class="fa fa-commenting"></i></div>
+	                    <h3>24/7 Support</h3>
+	                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                    </div>
+	            </div>
+	            <div class="row">
+	            	<div class="col-sm-12 section-bottom-button wow fadeInUp">
+                        <a class="btn btn-link-1 scroll-link" href="#top-content">Sign Up Now <i class="fa fa-angle-right"></i></a>
+	            	</div>
+	            </div>
+	        </div>
+        </div>
+-->
+		<!-- How it works 
+        <div class="how-it-works-container section-container section-container-gray-bg">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-5 how-it-works-box wow fadeInLeft">
+	                    <div class="embed-responsive embed-responsive-16by9">
+							<iframe class="embed-responsive-item" src="https://player.vimeo.com/video/115014610?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=e36da1" 
+										webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						</div>
+	                </div>
+	                <div class="col-sm-6 col-sm-offset-1 how-it-works-box how-it-works-box-right wow fadeInUp">
+	                    <h3>See how our app works!</h3>
+                    	<p>
+                    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
+                    		Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.
+                    	</p>
+                    	<p>
+                    		Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+                    		Ut wisi enim ad minim veniam, quis nostrud. 
+                    	</p>
+                    	<p>
+                    		<a class="learn-more scroll-link" href="#top-content">Sign Up Now</a>
+                    	</p>
+	                </div>
+	            </div>
+	        </div>
+        </div>
+        -->
+        <!-- Testimonials 
+        <div class="testimonials-container section-container section-container-image-bg">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 testimonials section-description wow fadeIn">
+	                	<h2>Testimonials</h2>
+	                    <p>Take a look below to read what our clients have said about us:</p>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-sm-10 col-sm-offset-1 testimonial-list wow fadeInUp">
+	                	<div role="tabpanel">
+	    -->
+	                		<!-- Tab panes
+
+	                		<div class="tab-content">
+	                			<div role="tabpanel" class="tab-pane fade in active" id="tab1">
+	                				<div class="testimonial-image">
+	                					<img src="assets/img/testimonials/1.jpg" alt="" data-at2x="assets/img/testimonials/1.jpg">
+	                				</div>
+	                				<div class="testimonial-text">
+		                                <p>
+		                                	"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
+		                                	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
+		                                	Lorem ipsum dolor sit amet, consectetur..."<br>
+		                                	<a href="#">Lorem Ipsum, dolor.co.uk</a>
+		                                </p>
+	                                </div>
+	                			</div>
+	                			<div role="tabpanel" class="tab-pane fade" id="tab2">
+	                				<div class="testimonial-image">
+	                					<img src="assets/img/testimonials/2.jpg" alt="" data-at2x="assets/img/testimonials/2.jpg">
+	                				</div>
+	                				<div class="testimonial-text">
+		                                <p>
+		                                	"Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip 
+		                                	ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+		                                	lobortis nisl ut aliquip ex ea commodo consequat..."<br>
+		                                	<a href="#">Minim Veniam, nostrud.com</a>
+		                                </p>
+	                                </div>
+	                			</div>
+	                			<div role="tabpanel" class="tab-pane fade" id="tab3">
+	                				<div class="testimonial-image">
+	                					<img src="assets/img/testimonials/3.jpg" alt="" data-at2x="assets/img/testimonials/3.jpg">
+	                				</div>
+	                				<div class="testimonial-text">
+		                                <p>
+		                                	"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
+		                                	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
+		                                	Lorem ipsum dolor sit amet, consectetur..."<br>
+		                                	<a href="#">Lorem Ipsum, dolor.co.uk</a>
+		                                </p>
+	                                </div>
+	                			</div>
+	                			<div role="tabpanel" class="tab-pane fade" id="tab4">
+	                				<div class="testimonial-image">
+	                					<img src="assets/img/testimonials/4.jpg" alt="" data-at2x="assets/img/testimonials/4.jpg">
+	                				</div>
+	                				<div class="testimonial-text">
+		                                <p>
+		                                	"Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip 
+		                                	ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+		                                	lobortis nisl ut aliquip ex ea commodo consequat..."<br>
+		                                	<a href="#">Minim Veniam, nostrud.com</a>
+		                                </p>
+	                                </div>
+	                			</div>
+	                		</div>
+							 -->
+
+
+	                		<!-- Nav tabs 
+	                		<ul class="nav nav-tabs" role="tablist">
+	                			<li role="presentation" class="active">
+	                				<a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab"></a>
+	                			</li>
+	                			<li role="presentation">
+	                				<a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab"></a>
+	                			</li>
+	                			<li role="presentation">
+	                				<a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab"></a>
+	                			</li>
+	                			<li role="presentation">
+	                				<a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab"></a>
+	                			</li>
+	                		</ul>
+	                	</div>
+	                </div>
+	            </div>
+	        </div>
+        </div>
+        					-->
+
+        <!-- FAQ 
+        <div class="faq-container section-container">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 faq section-description wow fadeIn">
+	                    <h2>Frequently Asked Questions</h2>
+	                    <div class="divider-1 wow fadeInUp">. . . . . . . . . .</div>
+	                    <p>
+	                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
+	                    	Ut wisi enim ad minim veniam, quis nostrud tempor incididunt ut labore et.
+	                    </p>
+	                </div>
+	            </div>
+	            <div class="row">
+                	<div class="col-sm-4 col-sm-offset-1 faq-box wow fadeInUp">
+	                	<div class="faq-number">1</div>
+	                    <h3>What can I do with your app?</h3>
+	                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+	                    <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div class="col-sm-4 col-sm-offset-2 faq-box wow fadeInDown">
+	                	<div class="faq-number">2</div>
+	                    <h3>Does it support multi-users?</h3>
+	                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+	                    <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-1 faq-box wow fadeInUp">
+	                	<div class="faq-number">3</div>
+	                    <h3>Types of payments you accept?</h3>
+	                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+	                    <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div class="col-sm-4 col-sm-offset-2 faq-box wow fadeInDown">
+	                	<div class="faq-number">4</div>
+	                    <h3>Do you have an affiliate program?</h3>
+	                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+	                    <p>Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    </div>
+	            </div>
+	            <div class="row">
+	            	<div class="col-sm-12 section-bottom-button wow fadeInUp">
+                        <a class="btn btn-link-1 scroll-link" href="#top-content">Sign Up Now <i class="fa fa-angle-right"></i></a>
+	            	</div>
+	            </div>
+	        </div>
+        </div>
+
+        -->
+        
+        <!-- Footer 
+        <footer>
+	        <div class="container">
+	        	<div class="row">
+	        		<div class="col-sm-4 footer-about wow fadeInUp">
+	        			<h3>About Us</h3>
+	        			<p>
+	        				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
+	        				Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.
+	        			</p>
+	        			<p>
+                    		<a class="scroll-link" href="#about-us">Learn More</a>
+                    	</p>
+                    </div>
+	        		<div class="col-sm-4 footer-contact-info wow fadeInDown">
+	        			<h3>Contact Info</h3>
+	                	<p><i class="fa fa-map-marker"></i> Via Rossini 10, 10136 Turin Italy</p>
+	                	<p><i class="fa fa-phone"></i> Phone: (0039) 333 12 68 347</p>
+	                	<p><i class="fa fa-envelope"></i> Email: <a href="mailto:contact.azmind@gmail.com">contact.azmind@gmail.com</a></p>
+	                	<p><i class="fa fa-skype"></i> Skype: regy_online</p>
+                    </div>
+                    <div class="col-sm-4 footer-social wow fadeInUp">
+                    	<h3>We're Social</h3>
+                    	<p>
+	                    	<a href="#"><i class="fa fa-facebook"></i></a> 
+							<a href="#"><i class="fa fa-twitter"></i></a> 
+							<a href="#"><i class="fa fa-google-plus"></i></a> 
+							<a href="#"><i class="fa fa-instagram"></i></a> 
+							<a href="#"><i class="fa fa-pinterest"></i></a>
+						</p>
+                    </div>
+	            </div>
+	            <div class="row">
+           			<div class="col-sm-6 footer-copyright">
+                    	&copy; Regy Bootstrap Registration Template by <a href="http://azmind.com/free-bootstrap-themes-templates/">AZMIND</a>
+                    </div>
+           			<div class="col-sm-6 footer-menu">
+                    	<ul>
+                    		<li><a class="scroll-link" href="#top-content">Top</a></li>
+							<li><a class="scroll-link" href="#features">Features</a></li>
+							<li><a class="scroll-link" href="#how-it-works">How it works</a></li>
+							<li><a href="#">Terms</a></li>
+							<li><a href="#">Privacy</a></li>
+						</ul>
+                    </div>
+           		</div>
+	        </div>
+        </footer>
+		
+		-->
+
+        <!-- Javascript -->
+		
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/retina-1.1.0.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>

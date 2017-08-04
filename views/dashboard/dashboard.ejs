@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="apple-touch-icon" sizes="76x76" href="assets_dash/img/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets_dash/img/favicon.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Recommerce - Dashboard</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="assets_dash/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="assets_dash/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Paper Dashboard core CSS    -->
+    <link href="assets_dash/css/paper-dashboard.css" rel="stylesheet"/>
+
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets_dash/css/demo.css" rel="stylesheet" />
+
+
+    <!--  Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <link href="assets_dash/css/themify-icons.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar" data-background-color="white" data-active-color="danger">
+
+    <!--
+		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+	-->
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="http://www.creative-tim.com" class="simple-text">
+                    Recommerce
+
+                </a>
+            </div>
+						<br><p style="text-align:center"><%= req.query.url %></p>
+            <ul class="nav">
+                <li class="active">
+                    <a href="dashboard?token=<%= req.query.token %>&membername=<%= req.query.membername %>&url=<%= req.query.url %>&tp=<%= req.query.tp %>&tc=<%= req.query.tc %>&to=<%= req.query.to %>">
+                        <i class="ti-panel"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="user?token=<%= req.query.token %>&membername=<%= req.query.membername %>&url=<%= req.query.url %>&tp=<%= req.query.tp %>&tc=<%= req.query.tc %>&to=<%= req.query.to %>">
+                        <i class="ti-user"></i>
+                        <p>User Profile</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="table?token=<%= req.query.token %>&membername=<%= req.query.membername %>&url=<%= req.query.url %>&tp=<%= req.query.tp %>&tc=<%= req.query.tc %>&to=<%= req.query.to %>">
+                        <i class="ti-view-list-alt"></i>
+                        <p>Table List</p>
+                    </a>
+                </li>
+
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar bar1"></span>
+                        <span class="icon-bar bar2"></span>
+                        <span class="icon-bar bar3"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Dashboard</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="ti-user"></i>
+                                    <p class="notification"></p>
+									<p><b>Welcome <%= req.query.membername %> !</b></p>
+									<b class="caret"></b>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="http://localhost:3000/login">Logout</a></li>
+                              </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-success text-center">
+                                            <i class="ti-user"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Customers</p>
+                                            <%= req.query.tc %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-calendar"></i> Jumlah Pelanggan Toko
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-danger text-center">
+                                            <i class="ti-package"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Products</p>
+                                            <%= req.query.tp %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-timer"></i> Jumlah Produk Toko
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-info text-center">
+                                            <i class="ti-shopping-cart"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Order</p>
+                                            <%= req.query.to %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-reload"></i> Jumlah Pesanan
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Kolom Update Data</h4>
+                                <p class="category"><%= req.query.url %></p>
+                            </div>
+                            <div class="content">
+                                <div id="chartHours" class="ct-chart">
+
+
+																	<div class="content">
+			                                <ul class="list-unstyled team-members">
+																									<a href="http://localhost:3000/wooapi/updatedataprodonly?token=<%= req.query.token %>">
+			                                            <li>
+			                                                <div class="row">
+			                                                    <div class="col-xs-3">
+			                                                        <div class="avatar">
+			                                                            <img src="assets_dash/img/faces/product.jpg" alt="Update Produk" class="img-circle img-no-padding img-responsive">
+
+			                                                        </div>
+
+			                                                    </div>
+			                                                    <div class="col-xs-6">
+			                                                        <br>Update Data Produk Terbaru
+			                                                        <!-- <br />
+			                                                        <span class="text-muted"><small>Offline</small></span> -->
+			                                                    </div>
+
+			                                                    <div class="col-xs-3 text-right">
+			                                                        <btn class="btn btn-sm btn-info btn-icon"><i class="fa ti-upload"></i></btn>
+			                                                    </div>
+			                                                </div>
+			                                            </li>
+																								</a>
+																									<a href="http://localhost:3000/wooapi/updatedatacustomeronly?token=<%= req.query.token %>">
+			                                            <li>
+
+			                                                <div class="row">
+			                                                    <div class="col-xs-3">
+			                                                        <div class="avatar">
+			                                                            <img src="assets_dash/img/faces/customer.jpg" alt="Update Customer" class="img-circle img-no-padding img-responsive">
+			                                                        </div>
+			                                                    </div>
+			                                                    <div class="col-xs-6">
+																														<br>
+			                                                        Update Data Pelanggan Terbaru
+			                                                        <!-- <br />
+			                                                        <span class="text-success"><small>Available</small></span> -->
+			                                                    </div>
+
+			                                                    <div class="col-xs-3 text-right">
+			                                                        <btn class="btn btn-sm btn-danger btn-icon"><i class="fa ti-upload"></i></btn>
+			                                                    </div>
+			                                                </div>
+			                                            </li>
+																								</a>
+																								<a href="http://localhost:3000/wooapi/updatedataorderonly?token=<%= req.query.token %>">
+			                                            <li>
+
+			                                                <div class="row">
+			                                                    <div class="col-xs-3">
+			                                                        <div class="avatar">
+
+
+			                                                            <img  src="assets_dash/img/faces/order.jpg" alt="Update Order" class="img-circle img-no-padding img-responsive" >
+
+																															</div>
+			                                                    </div>
+			                                                    <div class="col-xs-6">
+																														<br>
+
+			                                                        Update Data Pesanan Terbaru
+			                                                        <!-- <br />
+			                                                        <span class="text-danger"><small>Busy</small></span> -->
+			                                                    </div>
+
+			                                                    <div class="col-xs-3 text-right">
+			                                                        <btn class="btn btn-sm btn-warning btn-icon"><i class="fa ti-upload"></i></btn>
+			                                                    </div>
+			                                                </div>
+			                                            </li>
+																									</a>
+			                                        </ul>
+			                            </div>
+
+
+
+
+																</div>
+
+                                <div class="footer">
+                                    <div class="chart-legend">
+                                        <i class="fa fa-circle text-info"></i> Produk
+                                        <i class="fa fa-circle text-danger"></i> Pelanggan
+                                        <i class="fa fa-circle text-warning"></i> Pesanan
+                                    </div>
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="ti-reload"></i> Default setting will update your data every 3 hours
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Email Statistics</h4>
+                                <p class="category">Last Campaign Performance</p>
+                            </div>
+                            <div class="content">
+                                <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
+
+                                <div class="footer">
+                                    <div class="chart-legend">
+                                        <i class="fa fa-circle text-info"></i> Open
+                                        <i class="fa fa-circle text-danger"></i> Bounce
+                                        <i class="fa fa-circle text-warning"></i> Unsubscribe
+                                    </div>
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="ti-timer"></i> Campaign sent 2 days ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card ">
+                            <div class="header">
+                                <h4 class="title">2015 Sales</h4>
+                                <p class="category">All products including Taxes</p>
+                            </div>
+                            <div class="content">
+                                <div id="chartActivity" class="ct-chart"></div>
+
+                                <div class="footer">
+                                    <div class="chart-legend">
+                                        <i class="fa fa-circle text-info"></i> Tesla Model S
+                                        <i class="fa fa-circle text-warning"></i> BMW 5 Series
+                                    </div>
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="ti-check"></i> Data information certified
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+
+                        <li>
+                            <a href="http://www.creative-tim.com">
+                                Creative Tim
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://blog.creative-tim.com">
+                               Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.creative-tim.com/license">
+                                Licenses
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright pull-right">
+                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">5213100090</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</div>
+
+
+</body>
+
+    <!--   Core JS Files   -->
+    <script src="assets_dash/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="assets_dash/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="assets_dash/js/bootstrap-checkbox-radio.js"></script>
+
+	<!--  Charts Plugin -->
+	<script src="assets_dash/js/chartist.min.js"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="assets_dash/js/bootstrap-notify.js"></script>
+
+    <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
+	<script src="assets_dash/js/paper-dashboard.js"></script>
+
+	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+	<script src="assets_dash/js/demo.js"></script>
+
+</html>
