@@ -1,0 +1,24 @@
+{
+  "name": "nodemovies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "cookies": "^0.7.0",
+    "ejs": "^2.5.6",
+    "express": "*",
+    "json2csv": "^3.7.3",
+    "jsonfile": "^3.0.0",
+    "morgan": "*",
+    "neo4j-driver": "*",
+    "path": "^0.12.7",
+    "routes": "^2.1.0",
+    "woocommerce-api": "^1.4.2"
+  }
+}

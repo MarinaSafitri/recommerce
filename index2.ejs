@@ -1,0 +1,52 @@
+<h3>Add Product</h3>
+<form method="post" action="/product/add">
+  <label>Product ID </label>
+  <input type="text" name="idprod"><br>
+  <br>
+  <label>Product name </label>
+  <input type="text" name="name">
+  <br>
+  <label>Product price </label>
+  <input type="text" name="price">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<h3>Add Customers</h3>
+<form method="post" action="/person/add">
+  <label>Person id </label>
+  <input type="text" name="id"><br>
+  <br>
+  <label>username </label>
+  <input type="text" name="username">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<h3>Add Relationship</h3>
+<form method="post" action="/product/customers/add">
+  <label>Product Name</label>
+  <input type="text" name="idprod"><br>
+  <br>
+  <label>Person Name</label>
+  <input type="text" name="username">
+  <br><br>
+  <label>Quantity</label>
+  <input type="text" name="quantity">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<h3>Product</h3>
+<ul>
+<% product.forEach(function(product){ %>
+    <li><%= product.name %></li>
+<% }) %>
+</ul>
+
+<h1>Person</h1>
+<ul>
+<% customers.forEach(function(customers){ %>
+    <li><%= customers.username %></li>
+<% }) %>
+</ul>
